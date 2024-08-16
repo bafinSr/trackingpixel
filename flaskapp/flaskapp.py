@@ -55,8 +55,8 @@ def my_spy_pixel_no_id():
     log_entry = f"Email Opened:\nTimestamp: {timestamp}\nUser Agent: {user_agent}\nIP Address Data: {data}\n"
 
     # Write log to hardcoded path. Must be an absolute path to the log file.
-    with open((path_to_directory+'/spy-pixel/spy_pixel_logs.txt'), 'r') as file:
-        f.write(log_entry)
+    with open((path_to_directory+'/spy-pixel/spy_pixel_logs.txt'), 'a') as file:
+        file.write(log_entry)
 
     # Serve a transparent pixel image when navigating to .../image URL. "image/png" displays the image in PNG format.
     return send_file(filename, mimetype="image/png")
@@ -85,8 +85,8 @@ def my_spy_pixel(id):
     log_entry = f"Email {id} Opened:\nTimestamp: {timestamp}\nUser Agent: {user_agent}\nIP Address Data: {data}\n"
 
     # Write log to hardcoded path. Must be an absolute path to the log file.
-    with open((path_to_directory+'/spy-pixel/spy_pixel_logs.txt'), 'r') as file:
-        f.write(log_entry)
+    with open((path_to_directory+'/spy-pixel/spy_pixel_logs.txt'), 'a') as file:
+        file.write(log_entry)
 
     # Serve a transparent pixel image when navigating to .../image URL. "image/png" displays the image in PNG format.
     return send_file(filename, mimetype="image/png")
